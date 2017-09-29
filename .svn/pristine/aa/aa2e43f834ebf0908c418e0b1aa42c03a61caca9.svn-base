@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Demo</title>
+    <style>
+	a.test {
+		font-weight: bold;
+	}
+</style>
+</head>
+<body>
+    <a href="http://jquery.com/">jQuery</a>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <!-- Using external .js file is more portabe and allwos for on client caching of .js files which is faster -->
+    <script src="mine.js"></script>
+    <script>    
+    // Attatch to the ready() function    
+ 	$(document).ready(function(){
+ 		// Register the click handler for the "a" element
+ 		$("a").click(function(event){
+ 			alert("Thanks for visiting"); // show message on click
+ 			event.preventDefault(); // dont allow it to click
+ 			// Hide "this" which is the "a" we've attached to, slowly...
+ 			$(this).hide("slow");
+ 		});
+
+ 		// We can attach a class to the HTML element. so cool
+ 		$("a").addClass("test");
+
+ 		// Lets declare some variables:
+ 		var myVariable;
+ 		myVariable = 10;
+ 		var myName = "stuart";
+ 		alert("My name is " + myName);
+
+ 		// 4 types of primatives in javascript:
+ 		var aString = "Stuart Mathews";
+ 		var aNotherString = 'Bruce Mathews'; // note single quotes is ok
+ 		var aNumber = 9; //whole number or integer
+ 		var aNotherNumber = 9.0; // floating point number
+ 		var aBool = true;
+ 		var aNotherBool = false;
+
+ 		var notUsed = undefined;
+ 		var stillNotUsedButAssignedNull = null;
+
+ 		// create new object using bracketless 'Object' constructor
+ 		var person = new Object; // notice no () brackets
+ 		person.name = "Darren";
+ 		person.surname = "Jones";
+ 		alert("This guy's name is "+person.name);
+ 		// create a new object inline:
+ 		var Watch = {
+ 			type: "Citizen", // notice the :
+ 			model: "EcoDrive"
+ 		};
+ 		// make an empty inline object
+ 		var myObject = {};
+ 		// javascript doesn't care about declarations, lets just add more properties as we go to the object!:
+ 		myObject["Fish"] = "Makeral"; // see how can define properties like this
+ 		myObject["Chips"] = "Willards";
+
+ 		alert( myObject.Fish); // we can also use the properties in dot notation.
+
+ 		// Arrays:
+ 		// make an array with a constructor:
+ 		var myNewArray = new Array;
+ 		// make an empty arreay
+ 		var myarr = []; 
+ 		// with some values on creation
+ 		var myVals = [1,2,3,4,5,6,7,89]; // same syntax as a sequence!
+ 		var MyNewVals = new Array( "value1", "value2" ); // constructor usage
+ 		alert( myVals.length);
+
+ 		// type checking can be found here : http://learn.jquery.com/javascript-101/types/
+
+ 		// functions
+ 		function saySomething( something )
+ 		{
+ 			alert( something );
+ 		}
+
+ 		saySomething("Hey something!");
+ 		// assign a variable to a function
+ 		var myFunc = saySomething;
+ 		myFunc("hey again!");
+ 		// make a variable a function, inline
+ 		var myCoolFunc = function(){
+ 			alert("This is my cool function");
+ 		};
+
+ 		myCoolFunc();
+
+
+ 	});    
+ 
+    </script>
+</body>
+</html>
